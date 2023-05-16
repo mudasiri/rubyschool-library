@@ -94,51 +94,51 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-<!--
+
 Example command:
 
 ```sh
  gem install rails
 ```
- -->
+
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
+
 Example commands:
 
 ```sh
   cd my-folder
   git clone git@github.com:mudasiri/rubyschool-library.git
 ```
---->
+
 
 ### Install
 
 Install this project with:
 
-<!--
+
 Example command:
 
 ```sh
   cd my-project
   gem install
 ```
---->
+
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
+
 Example command:
 
 ```sh
-  rails server
+  ruby nameoffile.rb
 ```
---->
+
 
 ### Run tests
 
