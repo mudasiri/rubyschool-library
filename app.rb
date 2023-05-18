@@ -83,10 +83,11 @@ class App
     book_number = gets.chomp.to_i
     book = @books[book_number]
 
-    puts ['', 'Select a person from the following list by number (not id']
+    puts ['', 'Select a person from the following list by number (not id)']
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
     end
+ 
     person_number = gets.chomp.to_i
     person = @people[person_number]
     puts ''
