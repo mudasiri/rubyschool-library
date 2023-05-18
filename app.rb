@@ -25,7 +25,7 @@ class App
     when 'N'
       parent_permission = false
     else
-      puts 'Invalid selection, please choose from Y or N'
+      puts 'Invalid selection, please type either Y or N'
       parent_permission = handle_permission
     end
     student = Student.new(age, name, parent_permission: parent_permission, person_type: 'student')
