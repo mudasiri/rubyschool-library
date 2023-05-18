@@ -45,7 +45,7 @@ class App
     name = gets.chomp.capitalize
     print 'Specialization: '
     specialization = gets.chomp.capitalize
-    teacher = Teacher.new(age, name, specialization, person_type: 'teacher')
+    teacher = Teacher.new(age, specialization, name, person_type: 'teacher')
     @people << teacher
     puts ['Person created succsefully', ' ']
   end
@@ -87,7 +87,7 @@ class App
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
     end
- 
+
     person_number = gets.chomp.to_i
     person = @people[person_number]
     puts ''
