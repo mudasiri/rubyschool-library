@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require_relative 'app'
 
 def handle_create_person_display_text
