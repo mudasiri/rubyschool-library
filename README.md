@@ -79,6 +79,9 @@ After you're finished please remove all the comments and instructions!
 
 - **[The project has a Teacher Module]**
 - **[The project has a Student Module ]**
+- **[The project has a Classroom Module ]**
+- **[The project has a Book Module ]**
+- **[The project has a Rent Module ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
