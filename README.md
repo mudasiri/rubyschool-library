@@ -77,6 +77,7 @@ After you're finished please remove all the comments and instructions!
 
 > The following are the key features of the Project.
 
+- **[The project has a Basic UI]**
 - **[The project has a Teacher Module]**
 - **[The project has a Student Module ]**
 - **[The project has a Classroom Module ]**
@@ -190,8 +191,8 @@ Example:
 > Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Add_book_Feature]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Add_Rent_Feature]**
+- [ ] **[Add_Basic_UI]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
