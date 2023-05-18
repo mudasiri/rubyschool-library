@@ -60,5 +60,3 @@ def main
     process_input(input, app)
   end
 end
-
-main
