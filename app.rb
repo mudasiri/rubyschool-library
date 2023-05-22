@@ -43,6 +43,7 @@ class App
     else
       puts 'Invalid selection, please type either Y or N'
       handle_permission
+    end
   end
 
   def handle_teacher_input
