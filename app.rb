@@ -14,40 +14,49 @@ class App
   end
 
   def handle_student_input
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp.capitalize
+    age = handle_age
+    name = handle_name
     parent_permission = handle_permission
-    case parent_permission
-    when 'Y'
-      parent_permission = true
-    when 'N'
-      parent_permission = false
-    else
-      puts 'Invalid selection, please type either Y or N'
-      parent_permission = handle_permission
-    end
     student = Student.new(age, name, parent_permission: parent_permission, person_type: 'student')
     @people << student
     puts ['Person created succsefully', ' ']
   end
 
-  def handle_permission
-    print 'Has Parent permission? [Y/N]: '
+  def handle_age
+    print 'Age: '
+    gets.chomp.to_i
+  end
+
+  def handle_name
+    print 'Name: '
     gets.chomp.capitalize
   end
 
+  def handle_permission
+    print 'Has Parent permission? [Y/N]: '
+    parent_permission = gets.chomp.capitalize
+    case parent_permission
+    when 'Y'
+      true
+    when 'N'
+      false
+    else
+      puts 'Invalid selection, please type either Y or N'
+      handle_permission
+  end
+
   def handle_teacher_input
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp.capitalize
-    print 'Specialization: '
-    specialization = gets.chomp.capitalize
+    age = handle_age
+    name = handle_name
+    specialization = handle_specialization
     teacher = Teacher.new(age, specialization, name, person_type: 'teacher')
     @people << teacher
     puts ['Person created succsefully', ' ']
+  end
+
+  def handle_specialization
+    print 'Specialization: '
+    gets.chomp.capitalize
   end
 
   def list_all_people
@@ -59,12 +68,20 @@ class App
   end
 
   def create_book
-    print 'Title: '
-    title = gets.chomp.capitalize
-    print 'Author: '
-    author = gets.chomp.capitalize
+    title = handle_book_title
+    author = handle_book_author
     @books << Book.new(title, author)
     puts 'Book created successfully'
+  end
+
+  def handle_book_title
+    print 'Title: '
+    gets.chomp.capitalize
+  end
+
+  def handle_book_author
+    print 'Author: '
+    gets.chomp.capitalize
   end
 
   def list_all_books
@@ -80,7 +97,7 @@ class App
     @books.each_with_index do |book, index|
       puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
-    book_number = gets.chomp.to_i
+    book_number = handle_book_number
     book = @books[book_number]
 
     puts ['', 'Select a person from the following list by number (not id)']
@@ -88,20 +105,31 @@ class App
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
     end
 
-    person_number = gets.chomp.to_i
+    person_number = handle_person_number
     person = @people[person_number]
     puts ''
 
-    print 'Date: '
-    date = gets.chomp
+    date = handle_date_input
 
     @rentals << Rental.new(date, book, person)
     puts 'Rental created successfully'
   end
 
+  def handle_book_number
+    gets.chomp.to_i
+  end
+
+  def handle_person_number
+    gets.chomp.to_i
+  end
+
+  def handle_date_input
+    print 'Date: '
+    gets.chomp
+  end
+
   def list_rentals_for_person
-    print 'ID of person: '
-    person_id = gets.chomp.to_i
+    person_id = handle_person_input
 
     person = @people.find { |p| p.id == person_id }
     if person.nil?
@@ -120,5 +148,10 @@ class App
     rentals.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.person.name}"
     end
+  end
+
+  def handle_person_input
+    print 'ID of person: '
+    gets.chomp.to_i
   end
 end
