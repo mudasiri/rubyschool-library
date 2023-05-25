@@ -1,4 +1,4 @@
-require_relative 'app'
+require_relative './interfaces/app'
 
 class Main
   def initialize
@@ -6,6 +6,12 @@ class Main
   end
 
   def display_options
+    puts '~~~~~~~~~~~~~~~~~~~~~~'
+    @app.book_count
+    @app.people_count
+    @app.rental_count
+    puts '~~~~~~~~~~~~~~~~~~~~~~'
+    puts ''
     puts 'Please choose an option by entering a number:'
     puts '1 - List all books'
     puts '2 - List all people'
@@ -24,8 +30,7 @@ class Main
       @app.list_all_people
     when 3
       handle_create_person_display_text
-      choice = gets.to_i
-      process_person_choice(choice)
+      process_person_choice
     when 4
       @app.create_book
     when 5
@@ -42,7 +47,8 @@ class Main
     print '[Input the number]: '
   end
 
-  def process_person_choice(choice)
+  def process_person_choice
+    choice = gets.to_i
     case choice
     when 1
       @app.handle_student_input
@@ -50,8 +56,7 @@ class Main
       @app.handle_teacher_input
     else
       puts 'Invalid choice, please select a number from [1..2]'
-      choice = gets.to_i
-      process_person_choice(choice)
+      process_person_choice
     end
   end
 end
@@ -67,4 +72,5 @@ def main
     main.process_input(input)
   end
 end
+
 main
