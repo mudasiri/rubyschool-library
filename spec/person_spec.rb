@@ -17,14 +17,14 @@ describe Person do
       expect(@person.correct_name).to eq('Mudasir')
     end
     describe '#add_rental' do
-    it "should create a new Rental object and add it to the person's rentals" do
-      book = Book.new('Title', 'Author')
-    date = '2023-5-25'
-    rental = Rental.new(date, book, @person)
-    @person.rent_book(rental)
-    expect(@person.rentals).to include(rental)
+      it "should create a new Rental object and add it to the person's rentals" do
+        book = Book.new('Title', 'Author')
+        date = '2023-5-25'
+        rental = Rental.new(date, book, @person)
+        @person.rent_book(rental)
+        expect(@person.rentals).to include(rental)
+      end
     end
-  end
 
     it 'creates a new Person object with default values' do
       expect(@person.parent_permission).to eq(true)
