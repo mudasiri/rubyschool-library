@@ -4,7 +4,7 @@ require './decorators/trimmer_decorator'
 
 class Person < Nameable
   attr_accessor :name, :age
-  attr_reader :id, :rentals
+  attr_reader :id, :rentals, :parent_permission, :person_type, :specialization
 
   def initialize(age, name = 'Unknown', parent_permission: true, person_type: 'student')
     super()
@@ -17,6 +17,7 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @person_type = person_type
     @rentals = []
   end
 
