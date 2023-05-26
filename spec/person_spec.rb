@@ -13,6 +13,9 @@ describe Person do
     it 'returns true for can_use_services?' do
       expect(@person.can_use_services?).to eq(true)
     end
+    it 'returns correct name of person created?' do
+      expect(@person.correct_name?).to eq('Mudasir')
+    end
     describe '#add_rental' do
     it "should create a new Rental object and add it to the person's rentals" do
       book = Book.new('Title', 'Author')
